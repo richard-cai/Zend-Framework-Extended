@@ -1,0 +1,8 @@
+<?php $this->blockBroker()->setLayout('pages/layouts/3-columns.phtml') ?>
+
+<?php $cache = $this->cache(5) ?>
+<?php if(!$cache->start('test')): ?>
+	<?php echo $this->block('category/product/view','category/product/view.phtml') ?>
+	<?php $cache->end() ?>
+<?php endif ?>
+<?php echo time().'<br/>' ?>

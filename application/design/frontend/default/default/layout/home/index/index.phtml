@@ -1,0 +1,38 @@
+<?php $this->blockBroker()->setLayout('pages/layouts/3-columns.phtml')
+						  ->setLayoutClass('pages/layout') ?>
+
+<div style="border:1px solid red">
+	<?php echo $this->block('category/product/view','category/product/view.phtml') ?>
+</div>
+
+<!-- javascript example -->
+<div id="form" style="width:100px;height:100px;background-color:yellow">
+
+</div>
+
+<?php echo $this->block('pages/script','test.phtml',array('element'=>'form'))?>
+<!-- end of javascript example -->
+
+<!-- output cache example -->
+<?php $cache = $this->cache(5) ?>
+
+<?php //$cache->clean() ?>
+
+<?php if(!$cache->start('test2')):?>
+		<div>
+		<?php echo 'cached for 5s:',time() ?>
+		</div>
+		<?php $cache->end() ?>
+<?php endif; ?>
+
+<?php $cache = $this->cache(10) ?>
+<?php if(!$cache->start('test3')):?>
+		<div>
+		<?php echo 'cached for 10s:',time()+1 ?>
+		</div>
+		<?php $cache->end() ?>
+<?php endif; ?>
+
+<?php echo 'no cache:',time() ?>
+<!--  end of output cache example -->
+

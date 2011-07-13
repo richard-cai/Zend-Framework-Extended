@@ -1,0 +1,17 @@
+<?php echo $this->doctype('XHTML1_STRICT') ?>
+<html>
+	<head>
+	<?php echo $this->block('pages/element/header', 'pages/elements/header.phtml') ?>
+	</head>
+<body>
+	<div>
+		<?php echo $this->block('pages/element', 'pages/elements/top.phtml') ?>
+		<?php echo $this->block('pages/element', 'pages/elements/left.phtml') ?>
+		<?php echo $this->block('pages/element', 'pages/elements/right.phtml') ?>
+		<div style="background-color:green;width:69%;height:400px;margin:0 auto">
+			<?php echo $content ?>
+		</div>
+		<?php echo $this->block('pages/element', 'pages/elements/footer.phtml') ?>
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!-- block function test -->
+<?php echo $this->getInfo() ?>
+<!-- end of block function test -->
+<br/>
+<!-- module option -->
+<?php echo $this->option('option') ?>
+<!-- end of module option -->
+<br/>
+<!-- translate test -->
+<?php echo $this->_('title') ?>
+<!-- end of translation test -->
+
+<!-- sub block test -->
+<?php echo $this->block("category/product/option/row","category/product/option/row.phtml") ?>
+<!-- endof sub block test -->
